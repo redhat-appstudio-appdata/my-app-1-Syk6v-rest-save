@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: java-sample-b2lf
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: java-sample-b2lf
+    app.kubernetes.io/part-of: my-app-1
+  name: java-sample-b2lf
+  namespace: mdsaud-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-quarkus-app
+      app.kubernetes.io/instance: java-sample-b2lf
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-quarkus-app
+        app.kubernetes.io/instance: java-sample-b2lf
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:Syk6v-java-sample-b2lf
+        name: my-java-quarkus
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 250Mi
+          requests:
+            cpu: 10m
+            memory: 100Mi
+status: {}
