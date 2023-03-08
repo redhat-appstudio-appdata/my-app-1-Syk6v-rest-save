@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: java-sample-b2lf
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload@sha256:a5a3c8e0336b24dd386206a19c769717a5a56db62fc98d613f22d19704245806
+      - image: quay.io/redhat-appstudio/user-workload@sha256:dc9610256a9a65d6e0bc8a49173fe288ebfc49b5c51c3f5b772f71abef7a122a
         name: my-java-quarkus
         ports:
         - containerPort: 8081
